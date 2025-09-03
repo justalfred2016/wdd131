@@ -1,0 +1,248 @@
+/* Base styles and variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    padding-bottom: 2rem;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+nav {
+    background-color: #e74c3c;
+    font-display: block;
+    
+}
+
+#course-title {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Navigation styles */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.4rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Card container for side-by-side layout */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Card styles */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.8rem;
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.card-content, .location-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.card img {
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid var(--light-color);
+}
+
+/* Resources list */
+.resources-list {
+    list-style: none;
+}
+
+.resources-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resources-list li::before {
+    content: '➤';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.resources-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.resources-list a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+/* Footer styles */
+footer {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-content, .location-content {
+        flex-direction: column;
+    }
+    
+    .card img {
+        align-self: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #course-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap');
