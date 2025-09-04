@@ -35,7 +35,6 @@ header {
 }
 nav {
     background-color: #e74c3c;
-    font-display: block;
     padding: 20px;
 
 }
@@ -47,7 +46,7 @@ nav {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
     letter-spacing: 1px;
-    background-color: linear-
+    background-color: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
 }
 
 /* Navigation styles */
