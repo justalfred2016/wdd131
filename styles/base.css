@@ -1,7 +1,7 @@
 /* Base styles and variables */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
+    --primary-color: #97b31d;
+    --secondary-color: #f10b7e;
     --accent-color: #e74c3c;
     --text-color: #333;
     --light-color: #ecf0f1;
@@ -22,21 +22,22 @@ body {
     line-height: 1.6;
     background-color: #f5f5f5;
     padding-bottom: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* Header styles */
 header {
     background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
     color: white;
-    padding: 1.5rem;
     text-align: center;
-    margin-bottom: 2rem;
     box-shadow: var(--shadow);
 }
 nav {
     background-color: #e74c3c;
     font-display: block;
-    
+    padding: 20px;
+
 }
 
 #course-title {
@@ -46,6 +47,7 @@ nav {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
     letter-spacing: 1px;
+    background-color: linear-
 }
 
 /* Navigation styles */
@@ -75,7 +77,7 @@ nav a:hover {
 
 /* Main content styles */
 main {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -105,7 +107,7 @@ h1::after {
 /* Card container for side-by-side layout */
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -140,6 +142,7 @@ h1::after {
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
+    text-decoration: underline;
 }
 
 .card-content, .location-content {
@@ -186,7 +189,7 @@ h1::after {
 
 .resources-list a:hover {
     color: var(--accent-color);
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     padding-left: 5px;
 }
 
