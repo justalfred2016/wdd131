@@ -46,7 +46,7 @@ nav {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
     letter-spacing: 1px;
-    background-color: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+   /* background-color: linear-gradient(135deg, var(--secondary-color), var(--dark-color));*/
 }
 
 /* Navigation styles */
