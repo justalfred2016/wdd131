@@ -1,0 +1,142 @@
+/* Base styles and mobile-first approach */
+:root {
+    --primary-color: #451111;
+    --secondary-color: #0F020B;
+    --accent-color: #00FF0D;
+    --text-color: #333;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+header {
+    color: var(--light-color);
+    padding: 1rem;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+#hamburgerBtn {
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+#primaryNav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#primaryNav.open {
+    display: block;
+}
+
+#primaryNav ul {
+    list-style: none;
+}
+
+#primaryNav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#primaryNav a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: var(--light-color);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#primaryNav a:hover {
+    background-color: var(--secondary-color);
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+header, footer {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    color: white;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+footer p {
+    margin: 0.5rem 0;
+}

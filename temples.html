@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album - WDD 131</title>
+    <meta name="description" content="A responsive temple album page for WDD 131 Dynamic Web Fundamentals course - Shimani Alfred Tlokotsi.">
+    <meta name="author" content="Shimani Alfred Tlokotsi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 768px)">
+    
+    <!-- JavaScript File -->
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Temple Album</h1>
+            <button id="hamburgerBtn" aria-label="Toggle navigation menu">☰</button>
+            <nav id="primaryNav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Old</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Large</a></li>
+                    <li><a href="#">Small</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Temples Around the World</h2>
+        <div class="temple-grid">
+            <figure>
+                <img src="images/aba-nigeria-temple-lds-273999-wallpaper.jpg" alt="Aba Nigeria Temple" loading="lazy">
+                <figcaption>Aba Nigeria Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/accra_ghana_temple.webp" alt="Accra Ghana Temple" loading="lazy">
+                <figcaption>Accra Ghana Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/anchorage_alaska_temple_lds.jpeg" alt="Anchorage Alaska Temple" loading="lazy">
+                <figcaption>Anchorage Alaska Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/johannesburg_south_africa_temple_lds.jpeg" alt="johannesburg south africa temple lds" loading="lazy">
+                <figcaption>Johannesburg South Africa Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/durban_south_africa_temple_exterior.jpeg" alt="Durban South Africa Temple" loading="lazy">
+                <figcaption>Durban South Africa Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/asuncion_paraguay_temple.webp" alt="Asunción Paraguay Temple" loading="lazy">
+                <figcaption>Asunción Paraguay Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/atlanta_temple_lds.jpeg" alt="Atlanta Georgia Temple" loading="lazy">
+                <figcaption>Atlanta Georgia Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/exterior_washington_dc_temple.webp" alt="washington_dc_temple" loading="lazy">
+                <figcaption>Washington DC Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/bern_switzerland_temple_lds.jpeg" alt="Bern Switzerland Temple" loading="lazy">
+                <figcaption>Bern Switzerland Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> Shimani Alfred Tlokotsi - Johannesburg South Africa
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

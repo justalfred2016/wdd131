@@ -1,0 +1,35 @@
+/* Styles for larger screens */
+@media (min-width: 768px) {
+    #hamburgerBtn {
+        display: none;
+    }
+    
+    #primaryNav {
+        display: block;
+        position: static;
+        width: auto;
+    }
+    
+    #primaryNav ul {
+        display: flex;
+    }
+    
+    #primaryNav li {
+        border-bottom: none;
+        margin-left: 1rem;
+    }
+    
+    .temple-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
