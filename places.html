@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover South Africa</title>
+    <meta name="description" content="Explore the beautiful South Africa with its unique architecture and vibrant culture">
+    <meta name="author" content="Shimani Alfred Tlokotsi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/places.css">
+    <script src="/scripts/places.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Discover South Africa</h1>
+        <p>The Rainbow Nation</p>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?w=600&h=400&fit=crop" media="(max-width: 600px)">
+                <source srcset="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?w=1200&h=800&fit=crop" media="(max-width: 1200px)">
+                <img src="/images/Sa landscape.jpeg" alt="South Africa landscape with Table Mountain">
+            </picture>
+            
+            <!-- Floating data and weather cards -->
+            <div class="floating-info">
+                <section class="floating-card data">
+                    <h2>Country Data</h2>
+                    <div class="data-item">
+                        <span class="data-label">Area:</span>
+                        <span class="data-value">1,221,037 sq km</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Population:</span>
+                        <span class="data-value">60.6 million</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Languages:</span>
+                        <span class="data-value">12 official languages</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Currency:</span>
+                        <span class="data-value">Rand (ZAR)</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Time Zone:</span>
+                        <span class="data-value">UTC+2 (SAST)</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Calling Code:</span>
+                        <span class="data-value">+27</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Internet TLD:</span>
+                        <span class="data-value">.za</span>
+                    </div>
+                </section>
+                
+                <section class="floating-card weather">
+                    <h2>Weather <span class="weather-icon">⛅</span></h2>
+                    <div class="weather-content">
+                        <div class="weather-icon-svg">
+                            <svg width="80" height="80" viewBox="0 0 64 64">
+                                <g fill="none" stroke="#004C97" stroke-width="2">
+                                    <circle cx="32" cy="32" r="10"/>
+                                    <path d="M32 12v6m0 32v6M20 20l4 4m16 16l4 4M12 32h6m32 0h6M20 44l4-4m16-16l4-4"/>
+                                </g>
+                                <circle cx="32" cy="32" r="6" fill="#F0C419" stroke="none"/>
+                            </svg>
+                        </div>
+                        <div class="weather-details">
+                            <p><strong>Currently:</strong> <span id="weather-condition">Partly Cloudy</span></p>
+                            <p><strong>Temperature:</strong> <span id="temperature">18</span>°C</p>
+                            <p><strong>Wind Speed:</strong> <span id="wind-speed">3</span> km/h</p>
+                            <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year">2024</span> Shimani Alfred Tlokotsi - Johannesburg South Africa</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
