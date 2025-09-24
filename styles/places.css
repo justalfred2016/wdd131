@@ -102,7 +102,7 @@ header p {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
-    width: 300px;
+    width: 250px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -120,7 +120,7 @@ header p {
     display: inline-block;
     font-size: 1.5rem;
     background-color: #F0C419;
-    padding-left: 60px;
+    right: 130px;
 
 }
 
@@ -133,23 +133,19 @@ header p {
 }
 
 .data-label {
-    font-weight: 600;
+    font-weight: 300;
     color: var(--dark);
 }
 
 .data-value {
     color: var(--primary);
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .weather-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.weather-icon-svg {
-    flex-shrink: 0;
+    gap: 10px;
 }
 
 .weather-details p {
