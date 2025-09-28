@@ -61,28 +61,28 @@ const temples = [
         location: "São Paulo, Brazil",
         dedicated: "1978, October, 30",
         area: 59246,
-        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/sao-paulo-brazil/400x250/sao-paulo-brazil-temple-lds-1140845-wallpaper.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/sao-paulo-brazil-temple/sao-paulo-brazil-temple-43546-thumb.jpg"
     },
     {
         templeName: "Rome Italy",
         location: "Rome, Italy",
         dedicated: "2019, March, 10",
         area: 41010,
-        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-lds-1079992-wallpaper.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-2642-main.jpg"
     },
     {
         templeName: "Logan Utah",
         location: "Logan, Utah, United States",
         dedicated: "1884, May, 17",
         area: 119749,
-        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/logan-utah/400x250/logan-utah-temple-1170199-wallpaper.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
     },
     {
         templeName: "Bangkok Thailand",
         location: "Bangkok, Thailand",
         dedicated: "2019, October, 22",
         area: 10865,
-        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bangkok-thailand/400x250/bangkok-thailand-temple-lds-1079424-wallpaper.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-40037-main.jpg"
     }
 ];
 
