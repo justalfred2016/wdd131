@@ -92,6 +92,10 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const currentYearElement = document.getElementById('currentyear');
 const lastModifiedElement = document.getElementById('lastModified');
 
+// Hamburger menu elements
+const hamburger = document.getElementById('hamburger');
+const filterNav = document.getElementById('filterNav');
+
 // Set current year and last modified date
 currentYearElement.textContent = new Date().getFullYear();
 lastModifiedElement.textContent = document.lastModified;
@@ -160,14 +164,49 @@ function displayTemples(filter) {
 
 // Event listeners for filter buttons
 filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+        // Prevent default link behavior
+        e.preventDefault();
+        
         // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         button.classList.add('active');
         // Display temples based on filter
         displayTemples(button.dataset.filter);
+        
+        // Close mobile menu after selection
+        closeMobileMenu();
     });
+});
+
+// Hamburger menu functionality
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    filterNav.classList.toggle('active');
+});
+
+// Function to close mobile menu
+function closeMobileMenu() {
+    if (window.innerWidth <= 768) {
+        hamburger.classList.remove('active');
+        filterNav.classList.remove('active');
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !filterNav.contains(e.target)) {
+        closeMobileMenu();
+    }
+});
+
+// Close mobile menu on window resize if it becomes desktop view
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        filterNav.classList.remove('active');
+    }
 });
 
 // Initial display of all temples
