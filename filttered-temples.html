@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album - WDD 131</title>
+    <meta name="description" content="A responsive temple album page for WDD 131 Dynamic Web Fundamentals course - Shimani Alfred Tlokotsi.">
+    <meta name="author" content="Shimani Alfred Tlokotsi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    
+    <!-- JavaScript File -->
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-text">WDD 131: Dynamic Web Fundamentals</div>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Temple Album</h1>
+        
+        <div class="filter-nav">
+            <button class="filter-btn active" data-filter="all">Home</button>
+            <button class="filter-btn" data-filter="old">Old</button>
+            <button class="filter-btn" data-filter="new">New</button>
+            <button class="filter-btn" data-filter="large">Large</button>
+            <button class="filter-btn" data-filter="small">Small</button>
+        </div>
+        
+        <div class="temple-grid" id="templeContainer">
+            <!-- Temple cards will be dynamically generated here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> Shimani Alfred Tlokotsi - Johannesburg South Africa
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
