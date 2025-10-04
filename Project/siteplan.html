@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Plan - One Piece Fan Hub</title>
+    <style>
+        /* Color Schema - One Piece Theme */
+        :root {
+            --primary-color: #1a237e; /* Deep blue like the sea */
+            --secondary-color: #d32f2f; /* Straw Hat red */
+            --accent-color: #ffc107; /* Treasure gold */
+            --background-color: #e3f2fd; /* Sky/sea light blue */
+            --text-color: #212121; /* Dark text for contrast */
+            --light-color: #f5f5f5; /* Light background elements */
+        }
+        
+        /* Typography */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Pirata One', 'Times New Roman', serif;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0d47a1);
+            color: var(--light-color);
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .color-swatch {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 120px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .font-sample {
+            margin: 15px 0;
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            background-color: var(--light-color);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .wireframe {
+            border: 1px solid #bdbdbd;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: var(--light-color);
+            border-radius: 8px;
+        }
+        
+        .wireframe-box {
+            border: 1px dashed #757575;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: white;
+            border-radius: 4px;
+        }
+        
+        .wireframe-box.header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        .wireframe-box.nav {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .wireframe-box.hero {
+            background-color: var(--accent-color);
+            text-align: center;
+            height: 200px;
+            line-height: 170px;
+        }
+        
+        .wireframe-box.content {
+            min-height: 150px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary-color), #0d47a1);
+            color: var(--light-color);
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .wireframe-container {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .wireframe {
+                width: 48%;
+            }
+            
+            .color-swatches {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+        }
+        
+        /* One Piece specific styling */
+        .straw-hat {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .straw-hat::before, .straw-hat::after {
+            content: "";
+            position: absolute;
+            background-color: var(--accent-color);
+        }
+        
+        .straw-hat::before {
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+            top: -10px;
+            left: -10px;
+        }
+        
+        .scenario-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .scenario-list li {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .jolly-roger {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .jolly-roger span {
+            font-size: 3rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ONE <span>PIECE</span> FAN HUB</div>
+            <p>Website Planning Document - The Grand Line Awaits!</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <div class="jolly-roger">
+                <span><img src="images/Onepiece/svg.jpg"></span>
+
+            </div>
+            <p><strong>One Piece Fan Hub</strong></p>
+            <p>This name was chosen to clearly identify the site as a central resource for all things related to the One Piece anime and manga series. The term "Fan Hub" emphasizes the community aspect and the comprehensive nature of the content.</p>
+            <p><em>Optional domain availability: onepiecefanhub.com</em></p>
+        </section>
+        
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>The One Piece Fan Hub will serve as the ultimate destination for fans of Eiichiro Oda's epic manga and anime series. The site will provide:</p>
+            <ul>
+                <li>Comprehensive character profiles and backstories</li>
+                <li>Detailed information about Devil Fruits and their abilities</li>
+                <li>Interactive maps of the One Piece world (East Blue, Grand Line, New World)</li>
+                <li>Episode and chapter guides with summaries and analysis</li>
+                <li>Latest news about the manga, anime, and related media</li>
+                <li>Community forums for discussion and theory crafting</li>
+                <li>Fan art gallery and cosplay resources</li>
+            </ul>
+        </section>
+        
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <p>These scenarios represent questions from our target audience that the website will address:</p>
+            <ul class="scenario-list">
+                <li>What are all the known Devil Fruits and their abilities in the One Piece universe?</li>
+                <li>I'm new to One Piece - where should I start watching and what's the best viewing order?</li>
+                <li>How can I connect with other One Piece fans in my area for viewing parties or events?</li>
+                <li>What are the latest theories about the identity of the final One Piece treasure?</li>
+                <li>Where can I find high-quality images of the Straw Hat crew for wallpapers?</li>
+                <li>What are the differences between the manga and anime adaptations?</li>
+            </ul>
+        </section>
+        
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <p>The selected color palette is inspired by the One Piece universe, representing the sea, the Straw Hat crew, and treasure:</p>
+            
+            <div class="color-swatches">
+                <div class="color-swatch" style="background-color: #1a237e;">Primary<br>#1a237e</div>
+                <p><strong>Primary Color (#1a237e):</strong> Used for headers, navigation, and primary UI elements. This deep blue represents the vast oceans of the One Piece world.</p>
+                
+                <div class="color-swatch" style="background-color: #d32f2f;">Secondary<br>#d32f2f</div>
+                <p><strong>Secondary Color (#d32f2f):</strong> Used for buttons, highlights, and important elements. This red represents the Straw Hat Jolly Roger and Luffy's signature color.</p>
+                
+                <div class="color-swatch" style="background-color: #ffc107; color: #333;">Accent<br>#ffc107</div>
+                <p><strong>Accent Color (#ffc107):</strong> Used for call-to-action elements and decorative accents. This gold represents the treasure sought by pirates throughout the series.</p>
+                
+                <div class="color-swatch" style="background-color: #e3f2fd; color: #333;">Background<br>#e3f2fd</div>
+                <p><strong>Background Color (#e3f2fd):</strong> Used for page backgrounds to represent the sky and sea of the One Piece world.</p>
+                
+                <div class="color-swatch" style="background-color: #212121; color: white;">Text<br>#212121</div>
+                <p><strong>Text Color (#212121):</strong> Used for body text to ensure high contrast and readability.</p>
+            </div>
+        </section>
+        
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>The selected fonts capture the adventurous spirit of One Piece while maintaining readability:</p>
+            
+            <div class="font-sample" style="font-family: 'Pirata One', cursive;">
+                <h3>Pirata One (Headings)</h3>
+                <p>This decorative serif font with a pirate theme will be used for all headings (H1, H2, H3) to create an immersive One Piece experience.</p>
+                <p style="font-size: 28px; font-weight: normal;">The King of Pirates Will Be The Freest Person On The Seas!</p>
+            </div>
+            
+            <div class="font-sample" style="font-family: 'Roboto', Arial, sans-serif;">
+                <h3>Roboto (Body Text)</h3>
+                <p>This clean, modern sans-serif font will be used for body text, providing excellent readability across all devices while complementing the heading font.</p>
+                <p>Sample body text: One Piece follows the adventures of Monkey D. Luffy, a young man whose body gained the properties of rubber after unintentionally eating a Devil Fruit.</p>
+            </div>
+        </section>
+        
+        <section id="wireframe">
+            <h2>Wireframe</h2>
+            <p>Basic layout sketches for the home page:</p>
+            
+            <div class="wireframe-container">
+                <div class="wireframe">
+                    <h3>Mobile View</h3>
+                    <div class="wireframe-box header">Header / Logo</div>
+                    <div class="wireframe-box nav">Navigation Menu</div>
+                    <div class="wireframe-box hero">Hero Section - Featured Content</div>
+                    <div class="wireframe-box content">Character Spotlight</div>
+                    <div class="wireframe-box content">Latest News</div>
+                    <div class="wireframe-box content">Devil Fruit Database</div>
+                    <div class="wireframe-box content">Community Forum Highlights</div>
+                    <div class="wireframe-box">Footer</div>
+                </div>
+                
+                <div class="wireframe">
+                    <h3>Desktop View</h3>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div class="wireframe-box header" style="width: 30%; text-align: center;">Logo</div>
+                        <div class="wireframe-box nav" style="width: 68%; text-align: center;">Navigation Menu</div>
+                    </div>
+                    <div class="wireframe-box hero" style="text-align: center; height: 300px; line-height: 270px;">Hero Section - Featured Content</div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div class="wireframe-box content" style="width: 32%; min-height: 200px;">Character Spotlight</div>
+                        <div class="wireframe-box content" style="width: 32%; min-height: 200px;">Latest News</div>
+                        <div class="wireframe-box content" style="width: 32%; min-height: 200px;">Devil Fruit Database</div>
+                    </div>
+                    <div class="wireframe-box content" style="text-align: center; margin-top: 20px; min-height: 150px;">Community Forum Highlights</div>
+                    <div class="wireframe-box" style="text-align: center; margin-top: 20px;">Footer</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Website Plan for One Piece Fan Hub | The Great Pirate Era Begins Here!</p>
+            <p>Last Updated: <span id="current-date"></span></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Add current date to footer
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
