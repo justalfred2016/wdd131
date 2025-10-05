@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review Form</title>
     <link rel="stylesheet" href="styles/form.css">
+    <style>
+        /* Additional CSS to ensure proper footer placement */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            flex: 1;
+        }
+        
+        footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -96,6 +112,8 @@
             <!-- Submit Button -->
             <button type="submit" class="submit-btn">Submit Review</button>
         </form>
+    </div> <!-- Closing container div -->
+
     <footer>
         <p>
             &copy; <span id="currentyear"></span> Shimani Alfred Tlokotsi - Johannesburg South Africa
@@ -103,6 +121,6 @@
         <p id="lastModified"></p>
     </footer>
 
-    <script src="scripts/form.js"></script>
+    <script src="scripts/form.js" defer></script>
 </body>
 </html>
