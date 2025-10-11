@@ -1031,4 +1031,141 @@ h3 {
         font-size: 1.1rem;
         padding: 0.8rem 1.5rem;
     }
+    /* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e8e8e8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.light-theme .contact-description {
+    color: #444444;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.light-theme .form-group label {
+    color: #222222;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ff6b35;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff8e53;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.light-theme .form-group input,
+.light-theme .form-group select,
+.light-theme .form-group textarea {
+    background: rgba(255, 255, 255, 0.9);
+    color: #222222;
+    border-color: #e55a2b;
+}
+
+.light-theme .form-group input:focus,
+.light-theme .form-group select:focus,
+.light-theme .form-group textarea:focus {
+    background: #ffffff;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.light-theme .form-group input::placeholder,
+.light-theme .form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Form validation styles */
+.form-group input:invalid:not(:focus):not(:placeholder-shown),
+.form-group select:invalid:not(:focus),
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.form-group input:valid:not(:focus):not(:placeholder-shown),
+.form-group select:valid:not(:focus),
+.form-group textarea:valid:not(:focus):not(:placeholder-shown) {
+    border-color: #2ed573;
+    background: rgba(46, 213, 115, 0.1);
+}
+
+/* Responsive form styles */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 100%;
+    }
+    
+    .contact-description {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-description {
+        font-size: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem;
+    }
+}
 }

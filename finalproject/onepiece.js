@@ -120,7 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMusicPlayer();
     setupEpisodeBanner();
     createBountyChart();
-    setupHamburgerMenu(); // Add hamburger menu functionality
+    setupHamburgerMenu();
+    setupForm(); // Add form setup
+    setupFormValidation(); // Add form validation
     
     // Load user preferences
     loadPreferences();
@@ -128,51 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update copyright year
     updateCopyrightYear();
 });
-
-// Hamburger Menu Functionality
-function setupHamburgerMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger.contains(event.target);
-        
-        if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
 
 function loadCrewMembers() {
     const crewGrid = document.getElementById('crewGrid');
@@ -407,6 +364,308 @@ function showMemberDetails(member) {
     
     modal.querySelector('.close').onclick = () => modal.remove();
     modal.onclick = (e) => { if(e.target === modal) modal.remove(); };
+}
+
+// Hamburger Menu Functionality
+function setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navMenu.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// FORM FUNCTIONALITY - ADDED TO EXISTING FILE
+
+// Form submission with conditional branching
+function setupForm() {
+    const crewForm = document.getElementById('crewForm');
+    
+    crewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const role = document.getElementById('role').value;
+        const devilFruit = document.getElementById('devilFruit').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const bounty = document.getElementById('bounty').value;
+        
+        // Validate form (additional validation)
+        if (!name || !email || !role || !message) {
+            showFormMessage('Please fill in all required fields!', 'error');
+            return;
+        }
+        
+        // Conditional branching for different roles with enhanced responses
+        let responseMessage = '';
+        let emoji = '⚓';
+        
+        // Complex conditional branching with multiple conditions
+        if (role === 'swordsman') {
+            if (bounty && parseInt(bounty) > 1000000) {
+                responseMessage = `Impressive ${name}! With a ${bounty} Berry bounty, Zoro will definitely test your sword skills! 🗡️`;
+                emoji = '⚔️';
+            } else {
+                responseMessage = `Welcome ${name}! Zoro will train you to become a great swordsman! 🗡️`;
+                emoji = '🏴‍☠️';
+            }
+        } 
+        else if (role === 'navigator') {
+            responseMessage = `Ahoy ${name}! Nami will chart your course across the Grand Line! 🧭`;
+            emoji = '🌊';
+        } 
+        else if (role === 'cook') {
+            if (devilFruit.toLowerCase().includes('mera')) {
+                responseMessage = `Amazing ${name}! A fire-based Devil Fruit user in the kitchen? Sanji will be thrilled! 🔥`;
+                emoji = '👨‍🍳';
+            } else {
+                responseMessage = `Welcome ${name}! Sanji will judge your cooking and teach you his recipes! 👨‍🍳`;
+                emoji = '🍖';
+            }
+        } 
+        else if (role === 'doctor') {
+            responseMessage = `Hello Dr. ${name}! Chopper needs medical assistance and would love a partner! 🩺`;
+            emoji = '💊';
+        } 
+        else if (role === 'shipwright') {
+            responseMessage = `Yo ${name}! Franky needs help maintaining the Thousand Sunny! SUPER! 🚢`;
+            emoji = '🔧';
+        }
+        else if (role === 'musician') {
+            responseMessage = `Welcome ${name}! Brook needs a musical partner to play Bink's Sake with! 🎵`;
+            emoji = '🎻';
+        }
+        else if (role === 'archaeologist') {
+            responseMessage = `Fascinating ${name}! Robin would love to discuss the Void Century with you! 📜`;
+            emoji = '🔍';
+        }
+        else if (role === 'helmsman') {
+            responseMessage = `Welcome aboard ${name}! Jinbe will teach you how to navigate the roughest seas! 🚢`;
+            emoji = '⚓';
+        }
+        else {
+            responseMessage = `Welcome aboard ${name}! Luffy will find the perfect role for your unique skills! ⚓`;
+            emoji = '🏴‍☠️';
+        }
+        
+        // Additional conditional based on Devil Fruit
+        if (devilFruit) {
+            responseMessage += `\n\nYour ${devilFruit} power will be a great asset to the crew!`;
+            
+            // Nested conditional for specific Devil Fruits
+            if (devilFruit.toLowerCase().includes('gomu')) {
+                responseMessage += ` Wait... you have the same power as Captain Luffy?! This is incredible!`;
+            } else if (devilFruit.toLowerCase().includes('hito')) {
+                responseMessage += ` A Human-Human Fruit user like Chopper? Wonderful!`;
+            }
+        }
+        
+        // Conditional based on bounty amount
+        if (bounty) {
+            const bountyAmount = parseInt(bounty);
+            if (bountyAmount > 500000000) {
+                responseMessage += `\n\nWith a ${bounty.toLocaleString()} Berry bounty, the World Government will be after us! Exciting!`;
+            } else if (bountyAmount > 100000000) {
+                responseMessage += `\n\nA ${bounty.toLocaleString()} Berry bounty? You're quite the notorious pirate!`;
+            } else if (bountyAmount > 0) {
+                responseMessage += `\n\nYour ${bounty.toLocaleString()} Berry bounty is a good start!`;
+            }
+        }
+        
+        // Show success message with enhanced formatting
+        const finalMessage = `🏴‍☠️ APPLICATION SUBMITTED! 🏴‍☠️\n\n${responseMessage}\n\nWe'll contact you at: ${email}\n\n${emoji} SET SAIL FOR ADVENTURE! ${emoji}`;
+        
+        showFormMessage(finalMessage, 'success');
+        
+        // Store application in localStorage
+        storeApplication({ name, email, role, devilFruit, bounty, message });
+        
+        // Reset form
+        crewForm.reset();
+    });
+}
+
+// Store application data in localStorage
+function storeApplication(application) {
+    let applications = JSON.parse(localStorage.getItem('crewApplications') || '[]');
+    applications.push({
+        ...application,
+        timestamp: new Date().toISOString(),
+        status: 'pending'
+    });
+    localStorage.setItem('crewApplications', JSON.stringify(applications));
+}
+
+// Show form message with conditional styling
+function showFormMessage(message, type) {
+    // Remove any existing messages
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create message element
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message form-message-${type}`;
+    messageElement.textContent = message;
+    messageElement.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: ${type === 'success' ? 'rgba(46, 213, 115, 0.95)' : 'rgba(255, 71, 87, 0.95)'};
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 3000;
+        max-width: 90%;
+        width: 400px;
+        backdrop-filter: blur(10px);
+        border: 2px solid ${type === 'success' ? '#2ed573' : '#ff4757'};
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        line-height: 1.5;
+        white-space: pre-line;
+    `;
+    
+    document.body.appendChild(messageElement);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (messageElement.parentNode) {
+            messageElement.remove();
+        }
+    }, 5000);
+    
+    // Also allow clicking to close
+    messageElement.addEventListener('click', () => {
+        messageElement.remove();
+    });
+}
+
+// Enhanced form validation with conditional feedback
+function setupFormValidation() {
+    const form = document.getElementById('crewForm');
+    const inputs = form.querySelectorAll('input, select, textarea');
+    
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            clearFieldStatus(this);
+        });
+    });
+}
+
+function validateField(field) {
+    const value = field.value.trim();
+    
+    // Clear previous status
+    clearFieldStatus(field);
+    
+    // Conditional validation based on field type
+    if (field.required && !value) {
+        setFieldStatus(field, 'error', 'This field is required');
+        return false;
+    }
+    
+    if (field.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            setFieldStatus(field, 'error', 'Please enter a valid email address');
+            return false;
+        }
+    }
+    
+    if (field.id === 'bounty' && value) {
+        const bounty = parseInt(value);
+        if (bounty < 0) {
+            setFieldStatus(field, 'error', 'Bounty cannot be negative');
+            return false;
+        }
+        if (bounty > 10000000000) {
+            setFieldStatus(field, 'warning', 'That bounty is higher than any known pirate!');
+            return true; // Still valid, just a warning
+        }
+    }
+    
+    setFieldStatus(field, 'success', 'Looks good!');
+    return true;
+}
+
+function setFieldStatus(field, status, message) {
+    field.style.borderColor = status === 'success' ? '#2ed573' : 
+                            status === 'warning' ? '#ffa502' : '#ff4757';
+    
+    // Remove existing message
+    const existingMessage = field.parentNode.querySelector('.field-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Add new message
+    if (message) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `field-message field-message-${status}`;
+        messageElement.textContent = message;
+        messageElement.style.cssText = `
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            color: ${status === 'success' ? '#2ed573' : 
+                    status === 'warning' ? '#ffa502' : '#ff4757'};
+            font-family: 'Inter', sans-serif;
+        `;
+        field.parentNode.appendChild(messageElement);
+    }
+}
+
+function clearFieldStatus(field) {
+    field.style.borderColor = '#ff6b35';
+    const message = field.parentNode.querySelector('.field-message');
+    if (message) {
+        message.remove();
+    }
 }
 
 function loadPreferences() {
