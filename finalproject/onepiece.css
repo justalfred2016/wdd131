@@ -147,6 +147,50 @@ footer p {
     color: #ff6b35;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 25px;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #ff6b35;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+.hamburger span:nth-child(3) {
+    margin-top: 5px;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -738,10 +782,50 @@ h2 {
 
 @media (max-width: 768px) {
     .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
-        gap: 1rem;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+        backdrop-filter: blur(10px);
     }
-    
+
+    .light-theme .nav-menu {
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        display: block;
+        text-align: center;
+        width: 200px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+        background: rgba(255, 107, 53, 0.1);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -836,5 +920,11 @@ h2 {
     
     .quote-text {
         font-size: 0.9rem;
+    }
+
+    /* Mobile menu adjustments */
+    .nav-menu a {
+        width: 180px;
+        font-size: 1.1rem;
     }
 }
