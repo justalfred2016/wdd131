@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCrewMembers();
     loadDevilFruits();
     loadTimeline();
+    loadQuotes();
     setupSearch();
     setupFilters();
     setupThemeToggle();
@@ -122,6 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load user preferences
     loadPreferences();
+    
+    // Update copyright year
+    updateCopyrightYear();
 });
 
 function loadCrewMembers() {
@@ -174,6 +178,68 @@ function loadTimeline() {
         `;
         timeline.appendChild(arcElement);
     });
+}
+
+function loadQuotes() {
+    const quotesContainer = document.getElementById('quotesContainer');
+    
+    // Display first 4 quotes initially
+    const initialQuotes = onePieceQuotes.slice(0, 4);
+    
+    initialQuotes.forEach(quote => {
+        const quoteElement = createQuoteElement(quote);
+        quotesContainer.appendChild(quoteElement);
+    });
+}
+
+function createQuoteElement(quoteText) {
+    const quoteElement = document.createElement('div');
+    quoteElement.className = 'quote-card';
+    
+    // Split quote and character
+    const parts = quoteText.split(' - ');
+    const quote = parts[0];
+    const character = parts[1] || 'Unknown';
+    
+    quoteElement.innerHTML = `
+        <div class="quote-icon">"</div>
+        <div class="quote-text">${quote}</div>
+        <div class="quote-character">- ${character}</div>
+    `;
+    
+    return quoteElement;
+}
+
+function loadAllQuotes() {
+    const quotesContainer = document.getElementById('quotesContainer');
+    quotesContainer.innerHTML = '';
+    
+    onePieceQuotes.forEach(quote => {
+        const quoteElement = createQuoteElement(quote);
+        quotesContainer.appendChild(quoteElement);
+    });
+}
+
+function showRandomQuote() {
+    const quotesContainer = document.getElementById('quotesContainer');
+    const randomQuote = onePieceQuotes[Math.floor(Math.random() * onePieceQuotes.length)];
+    
+    // Clear container and show single random quote
+    quotesContainer.innerHTML = '';
+    const quoteElement = document.createElement('div');
+    quoteElement.className = 'quote-card single-quote';
+    
+    const parts = randomQuote.split(' - ');
+    const quote = parts[0];
+    const character = parts[1] || 'Unknown';
+    
+    quoteElement.innerHTML = `
+        <div class="quote-icon">"</div>
+        <div class="quote-text">${quote}</div>
+        <div class="quote-character">- ${character}</div>
+    `;
+    
+    quotesContainer.appendChild(quoteElement);
 }
 
 function setupSearch() {
@@ -297,11 +363,6 @@ function showMemberDetails(member) {
     modal.onclick = (e) => { if(e.target === modal) modal.remove(); };
 }
 
-function showRandomQuote() {
-    const randomQuote = onePieceQuotes[Math.floor(Math.random() * onePieceQuotes.length)];
-    alert(randomQuote);
-}
-
 function loadPreferences() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
@@ -311,6 +372,11 @@ function loadPreferences() {
     
     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
     // Could implement favorite system here
+}
+
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentyear').textContent = currentYear;
 }
 
 function scrollToSection(sectionId) {

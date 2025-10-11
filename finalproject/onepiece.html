@@ -39,6 +39,7 @@
                 <li><a href="#crew">Straw Hats</a></li>
                 <li><a href="#devil-fruits">Devil Fruits</a></li>
                 <li><a href="#timeline">Story Arcs</a></li>
+                <li><a href="#quotes">Quotes</a></li>
                 <li><a href="#gallery">Gallery</a></li>
             </ul>
         </div>
@@ -88,6 +89,17 @@
         </div>
     </section>
 
+    <section id="quotes" class="quotes-section">
+        <h2>Famous One Piece Quotes</h2>
+        <div class="quotes-container" id="quotesContainer">
+            <!-- Quotes will be loaded by JavaScript -->
+        </div>
+        <div class="quotes-controls">
+            <button class="cta-button" onclick="showRandomQuote()">Show Random Quote</button>
+            <button class="cta-button secondary" onclick="loadAllQuotes()">Show All Quotes</button>
+        </div>
+    </section>
+
     <section id="gallery" class="gallery-section">
         <h2>World Gallery</h2>
         <div class="gallery-grid">
@@ -107,8 +119,11 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 The Grand Line Archives. All One Piece content © Eiichiro Oda/Shueisha</p>
-        <button class="cta-button" onclick="showRandomQuote()" style="margin-top: 1rem;">Show Random Quote</button>
+        <div class="footer-content">
+            <p>
+                &copy; <span id="currentyear"></span> Shimani Alfred Tlokotsi - Johannesburg South Africa
+            </p>
+        </div>
     </footer>
 
     <script src="onepiece.js"></script>
