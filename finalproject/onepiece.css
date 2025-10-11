@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #0a1929, #0d1b2a);
     color: #ffffff;
     line-height: 1.6;
@@ -35,6 +35,8 @@ footer p {
     font-size: 1rem;
     margin: 0;
     line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 .light-theme footer p {
@@ -55,6 +57,7 @@ footer p {
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     display: none;
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
 }
 
 .episode-banner.show {
@@ -117,9 +120,11 @@ footer p {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 400;
     color: #ff6b35;
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 1.5px;
 }
 
 .nav-logo img {
@@ -137,6 +142,8 @@ footer p {
     text-decoration: none;
     transition: color 0.3s;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
 }
 
 .light-theme .nav-menu a {
@@ -217,12 +224,17 @@ footer p {
     margin-bottom: 1rem;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     color: #ffffff;
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     color: #e8e8e8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
 }
 
 .light-theme .hero-content h1 {
@@ -239,12 +251,14 @@ footer p {
     color: white;
     border: none;
     padding: 1rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     min-height: 44px;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
@@ -269,11 +283,27 @@ h2 {
     margin-bottom: 3rem;
     color: #ff6b35;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .light-theme h2 {
     color: #e55a2b;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.light-theme h3 {
+    color: #222222;
 }
 
 /* Loading and Skeleton */
@@ -331,6 +361,12 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.crew-member p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
 /* Filter Buttons */
 .filter-buttons {
     display: flex;
@@ -352,6 +388,7 @@ h2 {
     min-height: 44px;
     min-width: 44px;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
 }
 
 .light-theme .filter-btn {
@@ -375,6 +412,7 @@ h2 {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .fruit-grid {
@@ -404,6 +442,18 @@ h2 {
     transform: translateY(-3px);
 }
 
+.fruit-card h3 {
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.fruit-card p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
 .fruit-type {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -413,6 +463,7 @@ h2 {
     color: white;
     font-weight: 600;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
 }
 
 .fruit-type.paramecia { background: #ff6b35; }
@@ -446,6 +497,18 @@ h2 {
     border-color: #ff6b35;
     box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
     transform: translateX(10px);
+}
+
+.timeline-item h3 {
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.timeline-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
 .progress-bar {
@@ -503,6 +566,8 @@ h2 {
     line-height: 1.6;
     margin-bottom: 1rem;
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 .light-theme .quote-text {
@@ -510,10 +575,11 @@ h2 {
 }
 
 .quote-character {
-    font-weight: bold;
+    font-weight: 600;
     color: #ff6b35;
     text-align: right;
     font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .quote-icon {
@@ -610,6 +676,8 @@ h2 {
     padding: 1rem;
     text-align: center;
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
 
 .light-theme .gallery-caption {
@@ -658,6 +726,18 @@ h2 {
     color: #222222;
 }
 
+.modal-content h2 {
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.modal-content p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
 .close {
     position: absolute;
     right: 1rem;
@@ -702,6 +782,7 @@ h2 {
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
+    font-family: 'Inter', sans-serif;
 }
 
 .music-btn:hover {
@@ -749,6 +830,7 @@ h2 {
     white-space: nowrap;
     color: #ffffff;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
 }
 
 .light-theme .bounty-label {
@@ -816,6 +898,7 @@ h2 {
         width: 200px;
         border-radius: 5px;
         transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
     }
 
     .nav-menu a:hover {
@@ -828,6 +911,10 @@ h2 {
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
     }
     
     .search-bar input {
@@ -891,6 +978,10 @@ h2 {
         font-size: 2rem;
     }
     
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
     .nav-logo span {
         display: none;
     }
@@ -926,5 +1017,18 @@ h2 {
     .nav-menu a {
         width: 180px;
         font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
     }
 }
