@@ -29,7 +29,7 @@ const crewMembers = [
         role: "Cook",
         bounty: "1,032,000,000 Berries",
         devilFruit: "None",
-        image: "Onepiece/sanji_29_29_29.webp",
+        image: "Onepiece/Sanji_29_29_29.webp",
         description: "The cook with incredible kicking techniques and a chivalrous heart."
     },
     {
